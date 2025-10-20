@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - '9042:9042'
+    networks:
+      - sdfbs-net
+  node1:
+    build: .
+    depends_on:
+      - cassandra
+    ports:
+      - '8001:8000'
+    networks:
+      - sdfbs-net
+  node2:
+    build: .
+    depends_on:
+      - cassandra
+    ports:
+      - '8002:8000'
+    networks:
+      - sdfbs-net
+networks:
+  sdfbs-net:
