@@ -1,114 +1,107 @@
-﻿#  Welcome to Secure Distributed File Backup System (SDFBS) 
+﻿#  Secure Distributed File Backup System (SDFBS)
 
-![Data Backup](https://media.giphy.com/media/l0MYGEcHFX1VRvlIk/giphy.gif)
-
-Your ultimate **secure**, **distributed**, and **decentralized** file backup platform — designed to keep your data safe, reliable, and scalable like never before!  
+A  **powerful**,  **secure**, and  **scalable** decentralized file backup platform built on Docker and Cassandra.
 
 ---
 
-##  Why SDFBS Rocks?
+##  Key Features
 
-| Feature           | Why You'll Love it                    |
-|-------------------|---------------------------------------|
-|  Security       | End-to-end encryption protecting your precious data |
-|  Decentralized  | Multi-node Cassandra setup for ultimate redundancy |
-|  Dockerized     | Containers for easy, fast, scalable deployments  |
-|  Monitoring     | Powerful EFK stack (Elasticsearch, Fluentd, Kibana) for real-time insights |
-|  Load Balancer  | Nginx load balancer ensures seamless and reliable access |
-
-![Cloud Scale](https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif)
+|  Feature         |  Why You'll Love It                     |
+|---------------------|---------------------------------------|
+|  End-to-End Encryption | Protects your data at all times    |
+|  Distributed Architecture | Redundancy with Cassandra nodes   |
+|  Dockerized Deployment | Fast, repeatable container setup   |
+|  Centralized Monitoring | EFK stack for logs & performance   |
+|  Load Balancing    | Nginx for fault tolerant access      |
 
 ---
 
-##  Getting Started — Step by Step Guide 
+##  Getting Started
 
-### 1 Pre-flight Check
+### 1 Prerequisites
 
-Ensure:
-
--  Windows 10/11 with **WSL 2** installed and activated  
--  Latest **Docker Desktop** with WSL 2 integration enabled  
--  Git installed  
--  Visual Studio Code recommended  
+- Windows 10/11 with **WSL 2** enabled  
+- Latest **[Docker Desktop](https://www.docker.com/products/docker-desktop)** with WSL integration  
+- Git installed  
+- VS Code for development (recommended)
 
 ---
 
-### 2 Clone the SDFBS Repository 
+### 2 Clone the repository
 
 git clone https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System.git
 cd Secure-Distributed-File-Backup-System
 
 text
 
-![Cloning Repo](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
-
 ---
 
-### 3 Build & Launch Your Backup Fortress 
+### 3 Build and Launch Services  
 
 docker-compose -f cloud/docker-compose.yml up -d --build
 
 text
 
-Docker will pull images, build containers, and start all services. Sit back and relax!
-
-![Building Containers](https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif)
+*Docker automagically pulls, builds, and runs your entire backup system!*
 
 ---
 
-### 4 Inspect Your Setup 
+### 4 Verify Running Containers
 
 docker ps
 
 text
 
-You should see your Cassandra nodes, load balancer, and EFK stack containers all running.
+Check that all critical containers are running:
+- Cassandra & Node services
+- Load balancer
+- Elasticsearch, Fluentd, Kibana logging stack
 
 ---
 
-### 5 Dive Into Your Services 
+### 5 Access Your Application
 
-| Service URL         | Description                      | Visual Cue                        |
-|---------------------|---------------------------------|---------------------------------|
-| [Load Balancer](http://localhost:8080)  | Main entry to nodes         | ![HTTP Link](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif) |
-| [Secure Access](https://localhost:8443) | HTTPS access (accept warning) | ![Lock](https://media.giphy.com/media/xUOwGp9HfqV2nLLh7m/giphy.gif)      |
-| [Kibana Dashboard](http://localhost:5601) | Logs & metrics visualizer | ![Dashboard](https://media.giphy.com/media/xT0BKmtQGLbumr5RCM/giphy.gif)  |
-
----
-
-##  Quick Commands Cheat Sheet  
-
-| Action               | Command                                        |  
-|----------------------|------------------------------------------------|  
-|  Start all services | docker-compose -f cloud/docker-compose.yml up -d --build |  
-|  Stop all services  | docker-compose -f cloud/docker-compose.yml down |  
-|  See running        | docker ps                                     |  
-|  Inspect logs       | docker logs <container-name>                  |  
-|  Restart Load Balancer | docker restart loadbalancer                 |  
+|  Service            |  URL                   |  Description               |
+|-----------------------|--------------------------|-----------------------------|
+| Load Balancer (HTTP)  | [http://localhost:8080](http://localhost:8080)   | Access file nodes           |
+| Load Balancer (HTTPS) | [https://localhost:8443](https://localhost:8443) | Secure access (self-signed) |
+| Kibana Dashboard      | [http://localhost:5601](http://localhost:5601)   | Monitor logs and metrics    |
 
 ---
 
-##  Troubleshooting Wizard
+##  Quick Command Reference
 
-- Port conflicts? Adjust ports in cloud/docker-compose.yml  
-- Docker issues? Restart Docker Desktop and ensure WSL 2 is active  
-- Logging issues? Temporarily comment out Fluentd  
-- Use logs extensively for problem diagnosis
-
----
-
-##  Explore Your Project
-
-- cloud/: Core services and deployment  
-- efk/: Elasticsearch, Fluentd, Kibana logging stack  
-- load_balancer/: Nginx for HTTPS load balancing
+|  Action             |  Command                                      |
+|-----------------------|------------------------------------------------|
+| Start All Services    | docker-compose -f cloud/docker-compose.yml up -d --build |
+| Stop All Services     | docker-compose -f cloud/docker-compose.yml down |
+| Show Running Containers | docker ps                                   |
+| View Container Logs   | docker logs <container-name>                  |
+| Restart Load Balancer | docker restart loadbalancer                    |
 
 ---
 
-##  Get Involved!
+##  Troubleshooting Tips
 
-Contributions welcome! Open issues or pull requests on GitHub.
+- **Port conflicts?** Adjust ports in cloud/docker-compose.yml.
+- **Docker issues?** Restart Docker Desktop, verify WSL 2 backend.
+- **Logging problems?** Temporarily comment out Fluentd container.
+- **Always check logs:** Use docker logs <container> for insight.
 
 ---
 
- Now you're ready to keep your data safe and sound, with SDFBS! 
+##  Folder Structure Overview
+
+- cloud/: Core services, node apps, Dockerfiles  
+- efk/: Elasticsearch, Fluentd, Kibana config  
+- load_balancer/: Nginx configs and certificates  
+
+---
+
+##  Contributing & Support
+
+Contributions are welcome! Open GitHub issues or pull requests anytime. Full guidelines coming soon.
+
+---
+
+ Get ready to securely backup your data with confidence using SDFBS! 
