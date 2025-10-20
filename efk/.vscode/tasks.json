@@ -1,0 +1,7 @@
+﻿{
+  ""version"": ""2.0.0"",
+  ""tasks"": [
+    { ""label"": ""Run EFK Stack"", ""type"": ""shell"", ""command"": ""docker-compose -f ../cloud/docker-compose.yml up -d fluentd elasticsearch kibana"", ""group"": ""build"" },
+    { ""label"": ""Stop EFK Stack"", ""type"": ""shell"", ""command"": ""docker-compose -f ../cloud/docker-compose.yml down"", ""group"": ""build"" }
+  ]
+}

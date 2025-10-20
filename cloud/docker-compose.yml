@@ -6,21 +6,87 @@ services:
       - '9042:9042'
     networks:
       - sdfbs-net
+
   node1:
-    build: .
+    build:
+      context: .
     depends_on:
       - cassandra
     ports:
       - '8001:8000'
     networks:
       - sdfbs-net
+
   node2:
-    build: .
+    build:
+      context: .
     depends_on:
       - cassandra
     ports:
       - '8002:8000'
     networks:
       - sdfbs-net
+
+  node3:
+    build:
+      context: .
+    depends_on:
+      - cassandra
+    ports:
+      - '8003:8000'
+    networks:
+      - sdfbs-net
+
+  loadbalancer:
+    image: nginx:latest
+    volumes:
+      - ./load_balancer/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./load_balancer/certs:/etc/nginx/certs:ro
+    ports:
+      - '8443:443'
+      - '8080:80'
+    depends_on:
+      - node1
+      - node2
+      - node3
+    networks:
+      - sdfbs-net
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - 9200:9200
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - sdfbs-net
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.10
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    networks:
+      - sdfbs-net
+
+  fluentd:
+    image: fluent/fluentd:v1.14-1
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./efk/fluent.conf:/fluentd/etc/fluent.conf:ro
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+    networks:
+      - sdfbs-net
+
+volumes:
+  esdata:
+
 networks:
   sdfbs-net:
+    driver: bridge
