@@ -149,23 +149,72 @@ pip install flask
 
 <div align="center">
 
-| <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="100" /><br/>**🌱 Simple Mode** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="100" /><br/>**🚀 Distributed Mode** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="100" /><br/>**💎 Production Mode** |
-|:---:|:---:|:---:|
-| 🎯 **Perfect for Development** | ⚡ **Full P2P Network** | 🏆 **Enterprise Ready** |
-| | | |
-| ```python<br>simple_distributed.py``` | ```python<br>complete_distributed.py``` | ```python<br>redundant_distributed.py``` |
-| | | |
-| ![Version](https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white) |
-| | | |
-| **✨ Features** | **✨ Features** | **✨ Features** |
-| 🔹 Basic chunking | 🔹 Multi-node mesh | 🔹 Cassandra DB |
-| 🔹 Single-node simulation | 🔹 Heartbeat tracking | 🔹 2x redundancy |
-| 🔹 Web interface | 🔹 Dynamic scaling | 🔹 Full fault tolerance |
-| 🔹 Quick testing | 🔹 Master-slave arch | 🔹 Complete Phase 1 |
-| | | |
-| ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) | ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) | ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) |
+<table>
+<tr>
+<td width="33%" align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="100">
+  <p><strong>🌱 Simple Mode</strong></p>
+  <p>🎯 <strong>Perfect for Development</strong></p>
+  <pre><code>python
+simple_distributed.py
+</code></pre>
+  <p>
+    <img src="https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white">
+  </p>
+  <p><strong>✨ Features</strong></p>
+  <ul>
+    <li>🔹 Basic chunking</li>
+    <li>🔹 Single-node simulation</li>
+    <li>🔹 Web interface</li>
+    <li>🔹 Quick testing</li>
+  </ul>
+  <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
+</td>
+
+<td width="33%" align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="100">
+  <p><strong>🚀 Distributed Mode</strong></p>
+  <p>⚡ <strong>Full P2P Network</strong></p>
+  <pre><code>python
+complete_distributed.py
+</code></pre>
+  <p>
+    <img src="https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white">
+  </p>
+  <p><strong>✨ Features</strong></p>
+  <ul>
+    <li>🔹 Multi-node mesh</li>
+    <li>🔹 Heartbeat tracking</li>
+    <li>🔹 Dynamic scaling</li>
+    <li>🔹 Master-slave arch</li>
+  </ul>
+  <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
+</td>
+
+<td width="33%" align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="100">
+  <p><strong>💎 Production Mode</strong></p>
+  <p>🏆 <strong>Enterprise Ready</strong></p>
+  <pre><code>python
+redundant_distributed.py
+</code></pre>
+  <p>
+    <img src="https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white">
+  </p>
+  <p><strong>✨ Features</strong></p>
+  <ul>
+    <li>🔹 Cassandra DB</li>
+    <li>🔹 2x redundancy</li>
+    <li>🔹 Full fault tolerance</li>
+    <li>🔹 Complete Phase 1</li>
+  </ul>
+  <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
+</td>
+</tr>
+</table>
 
 </div>
+
 
 ![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
