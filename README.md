@@ -147,70 +147,33 @@ pip install flask
 
 ## 🎮 Choose Your Mode
 
-<table>
-<tr>
-<td width="33%" align="center">
+<div align="center">
 
-### 🌱 Simple Mode
-<h1>🌱</h1>
+| 🌱 **Simple Mode** | 🚀 **Distributed Mode** | 💎 **Production Mode** |
+|:---:|:---:|:---:|
+| <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="80" /> | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="80" /> | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="80" /> |
+| **Perfect for Development** | **Full P2P Network** | **Enterprise Ready** |
+| `python simple_distributed.py` | `python complete_distributed.py` | `python redundant_distributed.py` |
+| ![Version](https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white) |
+| **✨ Includes:** | **✨ Includes:** | **✨ Includes:** |
+| ✅ Basic chunking<br>✅ Single-node simulation<br>✅ Web interface<br>✅ Quick testing | ✅ Multi-node mesh<br>✅ Heartbeat tracking<br>✅ Dynamic scaling<br>✅ Master-slave arch | ✅ Cassandra DB<br>✅ 2x redundancy<br>✅ Full fault tolerance<br>✅ Complete Phase 1 |
 
-**Perfect for Development**
+</div>
 
-```bash
-python simple_distributed.py
-```
+---
 
-![Version](https://img.shields.io/badge/Version-1.0-green?style=for-the-badge)
+<div align="center">
 
-**Includes:**
-- ✅ Basic chunking
-- ✅ Single-node simulation
-- ✅ Web interface
-- ✅ Quick testing
+### 📊 Quick Comparison
 
-</td>
-<td width="33%" align="center">
+| Feature | 🌱 Simple | 🚀 Distributed | 💎 Production |
+|---------|:--------:|:--------------:|:-------------:|
+| **Nodes** | Single | Multi | Multi + Backup |
+| **Database** | In-Memory | In-Memory | Cassandra |
+| **Redundancy** | None | Basic | 2x Full |
+| **Best For** | Testing | Development | Production |
 
-### 🚀 Distributed Mode
-<h1>🚀</h1>
-
-**Full P2P Network**
-
-```bash
-python complete_distributed.py
-```
-
-![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge)
-
-**Includes:**
-- ✅ Multi-node mesh
-- ✅ Heartbeat tracking
-- ✅ Dynamic scaling
-- ✅ Master-slave arch
-
-</td>
-<td width="33%" align="center">
-
-### 💎 Production Mode
-<h1>💎</h1>
-
-**Enterprise Ready**
-
-```bash
-python redundant_distributed.py
-```
-
-![Version](https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge)
-
-**Includes:**
-- ✅ Cassandra DB
-- ✅ 2x redundancy
-- ✅ Full fault tolerance
-- ✅ Complete Phase 1
-
-</td>
-</tr>
-</table>
+</div>
 
 ![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
