@@ -12,9 +12,7 @@
 
 **[🚀 Quick Start](#-quick-start) • [📖 Documentation](#-features-at-a-glance) • [💡 Demo](#-how-it-works) • [🤝 Contribute](#-contributing)**
 
----
-
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 </div>
 
