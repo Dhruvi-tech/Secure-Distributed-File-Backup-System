@@ -44,7 +44,9 @@ cd Secure-Distributed-File-Backup-System
 
 ---
 
-### 3️⃣ Setup Instructions
+### 3️⃣ Choose Your Mode
+
+## 🐍 **Mode 1: Simple Distributed (Development)**
 
 ### **Step 1:** Open VS Code Terminal
 Press `Ctrl + `` or Terminal → New Terminal
@@ -59,19 +61,61 @@ cd phase1-core-infrastructure
 pip install flask
 ```
 
-### **Step 4:** Choose Mode and Start
-
-**Simple Mode (Development):**
+### **Step 4:** Start Simple Mode
 ```
 python simple_distributed.py
 ```
 
-**Complete Distributed (Multi-Node):**
+### **Step 5:** Open Browser
+Go to: http://localhost:8080
+
+**Features:** Basic file chunking, single-node simulation, web interface
+
+---
+
+## 🌐 **Mode 2: Complete Distributed (Multi-Node)**
+
+### **Step 1:** Open VS Code Terminal
+Press `Ctrl + `` or Terminal → New Terminal
+
+### **Step 2:** Navigate to Directory
+```
+cd phase1-core-infrastructure
+```
+
+### **Step 3:** Install Flask
+```
+pip install flask
+```
+
+### **Step 4:** Start Complete Distributed
 ```
 python complete_distributed.py
 ```
 
-**With Redundancy (Recommended):**
+### **Step 5:** Open Browser
+Go to: http://localhost:8080
+
+**Features:** Multi-node architecture, load balancing, distributed storage, health monitoring
+
+---
+
+## 🛡️ **Mode 3: With Redundancy (Recommended)**
+
+### **Step 1:** Open VS Code Terminal
+Press `Ctrl + `` or Terminal → New Terminal
+
+### **Step 2:** Navigate to Directory
+```
+cd phase1-core-infrastructure
+```
+
+### **Step 3:** Install Flask
+```
+pip install flask
+```
+
+### **Step 4:** Start Redundant System
 ```
 python redundant_distributed.py
 ```
@@ -79,7 +123,11 @@ python redundant_distributed.py
 ### **Step 5:** Open Browser
 Go to: http://localhost:8080
 
-### **Step 6:** Test Upload
+**Features:** 2x redundancy, fault tolerance, survives node failures, complete Phase 1 implementation
+
+---
+
+### **Step 6:** Test Upload (All Modes)
 1. Select file
 2. Click upload button
 3. Watch file chunks distribute across nodes
