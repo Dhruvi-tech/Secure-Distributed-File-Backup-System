@@ -624,7 +624,7 @@ graph LR
 
 <h1>⭐</h1>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 💬 Final Words
 
@@ -657,7 +657,7 @@ graph LR
 </tr>
 </table>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 Made with ❤️ by developers, for developers
 
