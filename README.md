@@ -159,55 +159,55 @@ pip install flask
 <tr>
 <td width="33%" align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="100">
-  <p><strong>🌱 Simple Mode</strong></p>
-  <p>🎯 <strong>Perfect for Development</strong></p>
+  <h3>🌱 Simple Mode</h3>
+  <p><strong>Perfect for Development</strong></p>
   <pre><code>python simple_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul align="left">
-    <li>🔹 Basic chunking</li>
-    <li>🔹 Single-node simulation</li>
-    <li>🔹 Web interface</li>
-    <li>🔹 Quick testing</li>
-  </ul>
+  <p>
+    ✦ Basic chunking<br/>
+    ✦ Single-node simulation<br/>
+    ✦ Web interface<br/>
+    ✦ Quick testing
+  </p>
   <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
 </td>
 
 <td width="33%" align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="100">
-  <p><strong>🚀 Distributed Mode</strong></p>
-  <p>⚡ <strong>Full P2P Network</strong></p>
+  <h3>🚀 Distributed Mode</h3>
+  <p><strong>Full P2P Network</strong></p>
   <pre><code>python complete_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul align="left">
-    <li>🔹 Multi-node mesh</li>
-    <li>🔹 Heartbeat tracking</li>
-    <li>🔹 Dynamic scaling</li>
-    <li>🔹 Master-slave arch</li>
-  </ul>
+  <p>
+    ✦ Multi-node mesh<br/>
+    ✦ Heartbeat tracking<br/>
+    ✦ Dynamic scaling<br/>
+    ✦ Master-slave arch
+  </p>
   <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
 </td>
 
 <td width="33%" align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="100">
-  <p><strong>💎 Production Mode</strong></p>
-  <p>🏆 <strong>Enterprise Ready</strong></p>
+  <h3>💎 Production Mode</h3>
+  <p><strong>Enterprise Ready</strong></p>
   <pre><code>python redundant_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul align="left">
-    <li>🔹 Cassandra DB</li>
-    <li>🔹 2x redundancy</li>
-    <li>🔹 Full fault tolerance</li>
-    <li>🔹 Complete Phase 1</li>
-  </ul>
+  <p>
+    ✦ Cassandra DB<br/>
+    ✦ 2x redundancy<br/>
+    ✦ Full fault tolerance<br/>
+    ✦ Complete Phase 1
+  </p>
   <p><img src="https://img.shields.io/badge/Status-Ready-success?style=flat-square"></p>
 </td>
 </tr>
@@ -225,39 +225,28 @@ pip install flask
 
 ### 📊 Data Flow Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    📤 File Upload (10MB)                     │
-└────────────────────────────┬────────────────────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  🔪 CHUNKING    │
-                    │   ENGINE        │
-                    └────────┬────────┘
-                             │
-             ┌───────────────┼───────────────┐
-             │               │               │
-             ▼               ▼               ▼
-    ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
-    │   💾 NODE 1    │ │   💾 NODE 2    │ │   💾 NODE 3    │
-    │                │ │                │ │                │
-    │  Chunk 1-3     │ │  Chunk 4-6     │ │  Chunk 7-10    │
-    │  [▓▓▓▓▓▓▓▓]    │ │  [▓▓▓▓▓▓▓▓]    │ │  [▓▓▓▓▓▓▓▓]    │
-    └────────┬───────┘ └────────┬───────┘ └────────┬───────┘
-             │                  │                  │
-             └──────────────────┼──────────────────┘
-                                ▼
-                    ┌───────────────────┐
-                    │  🔄 REDUNDANCY    │
-                    │    LAYER          │
-                    │   (2x Copies)     │
-                    └───────────────────┘
-                                │
-                                ▼
-                    ┌───────────────────┐
-                    │  ✅ VERIFIED      │
-                    │     STORAGE       │
-                    └───────────────────┘
+```mermaid
+graph TD
+    A[📤 File Upload] --> B[🔪 Chunking Engine]
+    B --> C{🌐 Load Balancer}
+    C -->|Chunk 1-3| D[💾 Node 1]
+    C -->|Chunk 4-6| E[💾 Node 2]
+    C -->|Chunk 7-10| F[💾 Node 3]
+    D --> G[🔄 Redundancy Layer]
+    E --> G
+    F --> G
+    G --> H[✅ Verified Storage]
+    H --> I[🎉 Success!]
+    
+    style A fill:#667eea,color:#fff,stroke:#fff,stroke-width:2px
+    style B fill:#764ba2,color:#fff,stroke:#fff,stroke-width:2px
+    style C fill:#f093fb,color:#333,stroke:#fff,stroke-width:2px
+    style D fill:#4facfe,color:#fff,stroke:#fff,stroke-width:2px
+    style E fill:#00f2fe,color:#333,stroke:#fff,stroke-width:2px
+    style F fill:#43e97b,color:#333,stroke:#fff,stroke-width:2px
+    style G fill:#fa709a,color:#fff,stroke:#fff,stroke-width:2px
+    style H fill:#fee140,color:#333,stroke:#fff,stroke-width:2px
+    style I fill:#38ef7d,color:#333,stroke:#fff,stroke-width:2px
 ```
 
 ### 🔄 Real-Time Sync Process
