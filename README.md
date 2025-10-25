@@ -149,29 +149,21 @@ pip install flask
 
 <div align="center">
 
-| 🌱 **Simple Mode** | 🚀 **Distributed Mode** | 💎 **Production Mode** |
+| <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="100" /><br/>**🌱 Simple Mode** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="100" /><br/>**🚀 Distributed Mode** | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="100" /><br/>**💎 Production Mode** |
 |:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="80" /> | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="80" /> | <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="80" /> |
-| **Perfect for Development** | **Full P2P Network** | **Enterprise Ready** |
-| `python simple_distributed.py` | `python complete_distributed.py` | `python redundant_distributed.py` |
+| 🎯 **Perfect for Development** | ⚡ **Full P2P Network** | 🏆 **Enterprise Ready** |
+| | | |
+| ```python<br>simple_distributed.py``` | ```python<br>complete_distributed.py``` | ```python<br>redundant_distributed.py``` |
+| | | |
 | ![Version](https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white) | ![Version](https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white) |
-| **✨ Includes:** | **✨ Includes:** | **✨ Includes:** |
-| ✅ Basic chunking<br>✅ Single-node simulation<br>✅ Web interface<br>✅ Quick testing | ✅ Multi-node mesh<br>✅ Heartbeat tracking<br>✅ Dynamic scaling<br>✅ Master-slave arch | ✅ Cassandra DB<br>✅ 2x redundancy<br>✅ Full fault tolerance<br>✅ Complete Phase 1 |
-
-</div>
-
----
-
-<div align="center">
-
-### 📊 Quick Comparison
-
-| Feature | 🌱 Simple | 🚀 Distributed | 💎 Production |
-|---------|:--------:|:--------------:|:-------------:|
-| **Nodes** | Single | Multi | Multi + Backup |
-| **Database** | In-Memory | In-Memory | Cassandra |
-| **Redundancy** | None | Basic | 2x Full |
-| **Best For** | Testing | Development | Production |
+| | | |
+| **✨ Features** | **✨ Features** | **✨ Features** |
+| 🔹 Basic chunking | 🔹 Multi-node mesh | 🔹 Cassandra DB |
+| 🔹 Single-node simulation | 🔹 Heartbeat tracking | 🔹 2x redundancy |
+| 🔹 Web interface | 🔹 Dynamic scaling | 🔹 Full fault tolerance |
+| 🔹 Quick testing | 🔹 Master-slave arch | 🔹 Complete Phase 1 |
+| | | |
+| ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) | ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) | ![Status](https://img.shields.io/badge/Status-Ready-success?style=flat-square) |
 
 </div>
 
