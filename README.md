@@ -1,4 +1,4 @@
-﻿# 🔐 Secure Distributed File Backup System (SDFBS)
+# 🔐 Secure Distributed File Backup System (SDFBS)
 
 ![Python](https://img.shields.io/badge/Python-Flask-blue?logo=python)
 ![Distributed](https://img.shields.io/badge/Architecture-Distributed-blue)
@@ -22,120 +22,60 @@
 
 ---
 
-## 🧰 Getting Started
+## 🚀 How to Run SDFBS
 
-### 1️⃣ Prerequisites
+### Prerequisites:
+- 🐍 **Python 3.7+** installed
+- 🔧 **Git** installed
+- 🧑💻 **VS Code** (recommended)
 
-Before you begin, ensure you have:
-
-- 💻 **Windows 10/11** with **WSL 2** enabled  
-- 🐳 **[Docker Desktop](https://www.docker.com/products/docker-desktop)** (with WSL integration)  
-- 🔧 **Git** installed  
-- 🧑‍💻 **VS Code** (recommended for editing & development)
-
----
-
-### 2️⃣ Clone the Repository
-
+### Setup:
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System.git
 cd Secure-Distributed-File-Backup-System
 ```
 
----
-
-### 3️⃣ Choose Your Mode
-
-## 🐍 **Mode 1: Simple Distributed (Development)**
-
-### **Step 1:** Open VS Code Terminal
-Press `Ctrl + `` or Terminal → New Terminal
-
-### **Step 2:** Navigate to Directory
+2. **Navigate to the project:**
 ```
 cd phase1-core-infrastructure
 ```
 
-### **Step 3:** Install Flask
+3. **Install Flask:**
 ```
 pip install flask
 ```
 
-### **Step 4:** Start Simple Mode
+### Choose and Run a Mode:
+
+**🐍 Simple Mode (Development):**
 ```
 python simple_distributed.py
 ```
+*Features: Basic file chunking, single-node simulation, web interface*
 
-### **Step 5:** Open Browser
-Go to: http://localhost:8080
-
-**Features:** Basic file chunking, single-node simulation, web interface
-
----
-
-## 🌐 **Mode 2: Complete Distributed (Multi-Node)**
-
-### **Step 1:** Open VS Code Terminal
-Press `Ctrl + `` or Terminal → New Terminal
-
-### **Step 2:** Navigate to Directory
-```
-cd phase1-core-infrastructure
-```
-
-### **Step 3:** Install Flask
-```
-pip install flask
-```
-
-### **Step 4:** Start Complete Distributed
+**🌐 Complete Distributed (Multi-Node):**
 ```
 python complete_distributed.py
 ```
+*Features: P2P network, heartbeat tracking, dynamic scaling, master-slave architecture*
 
-### **Step 5:** Open Browser
-Go to: http://localhost:8080
-
-**Features:** Multi-node architecture, load balancing, distributed storage, health monitoring
-
----
-
-## 🛡️ **Mode 3: With Redundancy (Recommended)**
-
-### **Step 1:** Open VS Code Terminal
-Press `Ctrl + `` or Terminal → New Terminal
-
-### **Step 2:** Navigate to Directory
-```
-cd phase1-core-infrastructure
-```
-
-### **Step 3:** Install Flask
-```
-pip install flask
-```
-
-### **Step 4:** Start Redundant System
+**🛡️ With Redundancy (Recommended):**
 ```
 python redundant_distributed.py
 ```
+*Features: Cassandra database, master-slave replication, 2x redundancy, complete Phase 1 implementation*
 
-### **Step 5:** Open Browser
-Go to: http://localhost:8080
+### Access the System:
+- Open browser to: **http://localhost:8080**
+- Upload files and watch them distribute across nodes
+- Monitor system health and redundancy
 
-**Features:** 2x redundancy, fault tolerance, survives node failures, complete Phase 1 implementation
+### Quick Commands:
+- Check Python: `python --version`
+- Check health: `curl http://localhost:8080/health`
 
-
-
----
-
-### **Step 6:** Test Upload (All Modes)
-1. Select file
-2. Click upload button
-3. Watch file chunks distribute across nodes
-4. Verify redundancy and fault tolerance
-
-
+**That's it! The distributed file backup system will be running with web interface, file chunking, and distributed storage.**
 
 ---
 
@@ -158,7 +98,6 @@ Go to: http://localhost:8080
 - View distributed storage across nodes
 - Monitor system health and redundancy
 - Download files with integrity verification
-
 
 ---
 
@@ -189,7 +128,7 @@ Go to: http://localhost:8080
 ## 🤝 Contributing & Support
 
 We welcome all contributions!  
-Whether it’s fixing a bug 🐞, improving documentation 📘, or adding a new feature 🚀 — your help matters!
+Whether it's fixing a bug 🐞, improving documentation 📘, or adding a new feature 🚀 — your help matters!
 
 - 💬 **Open an Issue:** [Report a Bug or Request Feature](https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System/issues)
 - 🌱 **Submit a PR:** Fork the repo, create your branch, and make a pull request.
@@ -211,4 +150,4 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 ---
 
-⭐ **If you like this project, don’t forget to give it a star on GitHub!**
+⭐ **If you like this project, don't forget to give it a star on GitHub!**
