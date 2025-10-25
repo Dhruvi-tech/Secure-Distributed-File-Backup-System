@@ -1,5 +1,4 @@
 # <div align="center">🔐 Secure Distributed File Backup System</div>
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
