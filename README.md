@@ -45,75 +45,126 @@ cd Secure-Distributed-File-Backup-System
 
 ---
 
-### 3️⃣ Step-by-Step Setup
+### 3️⃣ Complete Step-by-Step Setup
 
-#### Option 1: Simple Mode (Recommended)
+## 🐳 **Option 1: Docker Mode (Full Distributed System)**
 
-**Step 1:** Navigate to Phase 1 directory
+### **Step 1:** Install Docker Desktop
+1. Download from https://www.docker.com/products/docker-desktop
+2. Install and restart computer
+3. Open Docker Desktop, wait for green whale icon
+4. Enable WSL 2 in Docker settings
+
+### **Step 2:** Verify Docker
+```cmd
+docker --version
+docker-compose --version
+```
+
+### **Step 3:** Navigate to Cloud Directory
+```cmd
+cd phase1-core-infrastructure\cloud
+```
+
+### **Step 4:** Start Services
+```cmd
+.\start_cloud.bat
+```
+
+### **Step 5:** Wait 2-3 Minutes for Cassandra
+
+### **Step 6:** Verify Services
+```cmd
+docker-compose ps
+```
+
+### **Step 7:** Test Health
+```cmd
+curl http://localhost:8080/health
+```
+
+### **Step 8:** Access System
+- Load Balancer: http://localhost:8080
+- Dashboard: Open `web_dashboard.html`
+
+---
+
+## 🐍 **Option 2: Simple Mode (No Docker)**
+
+### **Step 1:** Check Python
+```cmd
+python --version
+```
+
+### **Step 2:** Navigate to Directory
 ```cmd
 cd phase1-core-infrastructure
 ```
 
-**Step 2:** Install Python dependencies
+### **Step 3:** Install Flask
 ```cmd
 pip install flask
 ```
 
-**Step 3:** Start the server
+### **Step 4:** Start Server
 ```cmd
 python simple_server.py
 ```
 
-**Step 4:** Open your browser and go to:
-```
-http://localhost:8080
-```
+### **Step 5:** Open Browser
+Go to: http://localhost:8080
 
+### **Step 6:** Test Upload
+1. Select file
+2. Click Upload
+3. Verify in files list
 
+---
 
-#### Option 2: Standalone Mode
+## 🔄 **Option 3: Standalone Mode**
 
-**Step 1:** Navigate to Phase 1 directory
+### **Step 1:** Install Dependencies
 ```cmd
 cd phase1-core-infrastructure
-```
-
-**Step 2:** Install required packages
-```cmd
 pip install flask flask-cors
 ```
 
-**Step 3:** Start API server (in first terminal)
+### **Step 2:** Start API Server (Terminal 1)
 ```cmd
 python standalone_server.py
 ```
 
-**Step 4:** Start web server (in second terminal)
+### **Step 3:** Start Web Server (Terminal 2)
 ```cmd
 python web_server.py
 ```
 
-**Step 5:** Access web interface at:
-```
-http://localhost:3001
-```
+### **Step 4:** Access Interface
+Go to: http://localhost:3001
+
+
 
 ---
 
-### 4️⃣ Verify System Status
+### 4️⃣ System Verification & Testing
 
-**Simple Mode:**
-1. Open http://localhost:8080 in your browser
-2. You should see "SDFBS Phase 1 - File Backup" page
-3. Try uploading a test file
-4. Verify the file appears in the files list
+**Docker Mode Verification:**
+1. All 7 containers should be running
+2. Health endpoint returns "healthy"
+3. Web dashboard shows 3 active nodes
+4. File upload distributes chunks across nodes
 
+**Simple Mode Verification:**
+1. Server starts without errors
+2. Web interface loads at localhost:8080
+3. File upload and download works
+4. Files appear in local storage
 
-
-**Standalone Mode:**
-1. Check API server at http://localhost:8080
-2. Check web interface at http://localhost:3001
-3. Upload a file through the web interface  
+**Standalone Mode Verification:**
+1. Both servers start successfully
+2. API responds at localhost:8080
+3. Web interface works at localhost:3001
+4. File operations work across both services  
 
 ---
 
@@ -121,8 +172,14 @@ http://localhost:3001
 
 | 🌐 Service | 🔗 URL | 📝 Description |
 |-------------|---------|----------------|
-| **Simple Mode** | [http://localhost:8080](http://localhost:8080) | Complete file backup system |
-| **Standalone Web** | [http://localhost:3001](http://localhost:3001) | Web interface (standalone mode) |
+| **Docker Load Balancer** | [http://localhost:8080](http://localhost:8080) | Distributed system entry point |
+| **Docker Dashboard** | `web_dashboard.html` | Open file in browser |
+| **Docker Node 1** | [http://localhost:8001](http://localhost:8001) | Direct access to storage node 1 |
+| **Docker Node 2** | [http://localhost:8002](http://localhost:8002) | Direct access to storage node 2 |
+| **Docker Node 3** | [http://localhost:8003](http://localhost:8003) | Direct access to storage node 3 |
+| **Simple Mode** | [http://localhost:8080](http://localhost:8080) | Single server file backup |
+| **Standalone API** | [http://localhost:8080](http://localhost:8080) | API server |
+| **Standalone Web** | [http://localhost:3001](http://localhost:3001) | Web interface |
 
 
 ---
@@ -131,10 +188,15 @@ http://localhost:3001
 
 | 🧩 Action | 💻 Command |
 |------------|-------------|
-| ▶️ **Start Simple Mode** | `cd phase1-core-infrastructure && run_simple.bat` |
+| ▶️ **Start Docker Mode** | `cd phase1-core-infrastructure\cloud && .\start_cloud.bat` |
+| ▶️ **Start Simple Mode** | `cd phase1-core-infrastructure && python simple_server.py` |
 | ▶️ **Start Standalone Mode** | `cd phase1-core-infrastructure && run_standalone.bat` |
-| 🔍 **Check Python Version** | `python --version` |
-| 📦 **Install Dependencies** | `pip install flask flask-cors` |
+| 🔍 **Check Docker** | `docker --version && docker-compose --version` |
+| 🔍 **Check Python** | `python --version` |
+| 📦 **Install Flask** | `pip install flask` |
+| 📦 **Install All Dependencies** | `pip install flask flask-cors` |
+| 🐳 **Stop Docker Services** | `docker-compose down` |
+| 🔍 **Check Docker Status** | `docker-compose ps` |
 
 ---
 

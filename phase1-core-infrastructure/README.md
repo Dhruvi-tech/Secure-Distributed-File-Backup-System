@@ -44,47 +44,43 @@ This phase establishes the foundational distributed system architecture with bas
 
 ## 🚀 Quick Start
 
-### Option 1: Simple Mode (Recommended)
+### Option 1: Cloud Architecture (Recommended)
+```cmd
+cd phase1-core-infrastructure\cloud
+start_cloud.bat
+```
+Access: http://localhost:8080 (Load Balanced)
+Dashboard: Open `web_dashboard.html` in browser
+
+### Option 2: Simple Mode (Development)
 ```cmd
 cd phase1-core-infrastructure
 run_simple.bat
 ```
-Then open: http://localhost:8080
-
-### Option 2: Docker Mode
-```bash
-# Start Docker Desktop first
-./start.sh
-
-# Or manually:
-docker-compose up -d --build
-```
+Access: http://localhost:8080
 
 ### Option 3: Standalone Mode
 ```cmd
+cd phase1-core-infrastructure
 run_standalone.bat
 ```
 Access: http://localhost:3001
 
 ## 📁 Phase 1 Components
 
-### Core Files
-- `simple_server.py` - Single-file server with web interface
-- `file_service.py` - Distributed file service
+### Cloud Architecture (Primary)
+- `cloud/distributed_node.py` - Distributed storage node with Cassandra
+- `cloud/docker-compose.yml` - Multi-node cluster orchestration
+- `cloud/nginx.conf` - Load balancer with security features
+- `cloud/web_dashboard.html` - Distributed system dashboard
+- `cloud/start_cloud.bat` - Cloud deployment script
+
+### Development Options
+- `simple_server.py` - Single-file server for testing
 - `standalone_server.py` - Standalone API server
 - `web_server.py` - Web interface server
-
-### Docker Setup
-- `docker-compose.yml` - Multi-service orchestration
-- `Dockerfile` - Container configuration
-- `cassandra/schema.cql` - Database schema
-- `nginx/nginx.conf` - Load balancer configuration
-
-### Scripts
 - `run_simple.bat` - Simple mode launcher
 - `run_standalone.bat` - Standalone mode launcher
-- `start.bat` - Docker mode launcher
-- `test_system.py` - Automated testing
 
 ## Next Phase
 Phase 2 will add security features including encryption, authentication, and anomaly detection.
