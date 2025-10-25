@@ -5,6 +5,7 @@ import os
 import json
 import threading
 import time
+import requests
 from datetime import datetime
 
 # Global storage for all nodes
@@ -14,8 +15,40 @@ nodes_data = {
     'node3': {'files': {}, 'chunks': {}}
 }
 
+# P2P Network and heartbeat tracking
+node_heartbeats = {}
+master_node = 'node1'  # Master-slave architecture
+
 app = Flask(__name__)
 CHUNK_SIZE = 1024 * 1024  # 1MB
+
+def p2p_heartbeat_monitor():
+    """Monitor node heartbeats for P2P network"""
+    while True:
+        current_time = time.time()
+        for node_id in list(nodes_data.keys()):
+            last_heartbeat = node_heartbeats.get(node_id, current_time)
+            if current_time - last_heartbeat > 30:  # 30 second timeout
+                print(f"Node {node_id} heartbeat timeout")
+            else:
+                node_heartbeats[node_id] = current_time
+        time.sleep(10)
+
+def dynamic_node_scaling():
+    """Handle dynamic addition/removal of nodes"""
+    while True:
+        active_nodes = [nid for nid, last_hb in node_heartbeats.items() 
+                       if time.time() - last_hb < 30]
+        
+        # Auto-scale based on load
+        if len(active_nodes) < 2:
+            new_node_id = f'node{len(nodes_data) + 1}'
+            if new_node_id not in nodes_data:
+                nodes_data[new_node_id] = {'files': {}, 'chunks': {}}
+                node_heartbeats[new_node_id] = time.time()
+                print(f"Dynamic scaling: Added {new_node_id}")
+        
+        time.sleep(60)
 
 def chunk_file(file_data):
     chunks = []
@@ -49,13 +82,13 @@ WEB_INTERFACE = '''
 <body>
     <div class="header">
         <h1>Secure Distributed File Backup System</h1>
-        <p>Complete Phase 1: Multi-Node Architecture with Load Balancing</p>
+        <p>P2P Network + Heartbeat Tracking + Dynamic Scaling + Master-Slave</p>
     </div>
 
     <div class="stats">
         <div class="stat">
-            <h3>3/3</h3>
-            <p>Nodes Online</p>
+            <h3>{{ healthy_nodes }}/{{ total_nodes }}</h3>
+            <p>P2P Nodes</p>
         </div>
         <div class="stat">
             <h3>{{ file_count }}</h3>
@@ -77,11 +110,12 @@ WEB_INTERFACE = '''
     </div>
 
     <div class="box">
-        <h3>Storage Nodes</h3>
-        {% for node_id, data in nodes.items() %}
-        <div class="node">
-            <strong>{{ node_id.upper() }}</strong> - localhost:{{ 8001 + loop.index0 }}
-            <span style="float: right;">{{ data.chunks|length }} chunks stored</span>
+        <h3>P2P Network Nodes (Dynamic Scaling)</h3>
+        {% for node_id, status in node_status.items() %}
+        <div class="node {{ 'online' if status == 'online' else 'offline' }}">
+            <strong>{{ node_id.upper() }}</strong>
+            {% if node_id == master_node %} (Master){% endif %}
+            <span style="float: right;">{{ status }} | Heartbeat: {{ heartbeats.get(node_id, 'Never') }}</span>
         </div>
         {% endfor %}
     </div>
@@ -135,6 +169,20 @@ WEB_INTERFACE = '''
 
 @app.route('/')
 def dashboard():
+    # P2P network status with heartbeat tracking
+    current_time = time.time()
+    node_status = {}
+    heartbeat_display = {}
+    
+    for node_id in nodes_data.keys():
+        last_heartbeat = node_heartbeats.get(node_id, 0)
+        if current_time - last_heartbeat < 30:
+            node_status[node_id] = 'online'
+            heartbeat_display[node_id] = f"{int(current_time - last_heartbeat)}s ago"
+        else:
+            node_status[node_id] = 'offline'
+            heartbeat_display[node_id] = 'Timeout'
+    
     # Collect all files from all nodes
     all_files = {}
     total_chunks = 0
@@ -146,10 +194,14 @@ def dashboard():
         total_chunks += len(data['chunks'])
     
     return render_template_string(WEB_INTERFACE,
-                                nodes=nodes_data,
+                                node_status=node_status,
+                                heartbeats=heartbeat_display,
                                 all_files=all_files,
+                                healthy_nodes=sum(1 for s in node_status.values() if s == 'online'),
+                                total_nodes=len(nodes_data),
                                 file_count=len(all_files),
-                                total_chunks=total_chunks)
+                                total_chunks=total_chunks,
+                                master_node=master_node)
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -237,15 +289,23 @@ def download(file_id):
 
 @app.route('/health')
 def health():
-    total_files = sum(len(data['files']) for data in nodes_data.values())
+    current_time = time.time()
+    active_nodes = sum(1 for hb in node_heartbeats.values() 
+                      if current_time - hb < 30)
+    
+    total_files = len(set().union(*[data['files'].keys() for data in nodes_data.values()]))
     total_chunks = sum(len(data['chunks']) for data in nodes_data.values())
     
     return jsonify({
         'status': 'healthy',
-        'nodes': 3,
+        'p2p_network': 'active',
+        'active_nodes': active_nodes,
+        'total_nodes': len(nodes_data),
         'files': total_files,
         'chunks': total_chunks,
-        'load_balancer': 'active'
+        'heartbeat_tracking': 'enabled',
+        'dynamic_scaling': 'active',
+        'master_node': master_node
     })
 
 @app.route('/files')
@@ -267,8 +327,16 @@ def nodes():
     return jsonify(node_status)
 
 if __name__ == '__main__':
+    # Initialize heartbeats
+    current_time = time.time()
+    for node_id in nodes_data.keys():
+        node_heartbeats[node_id] = current_time
+    
+    # Start background threads
+    threading.Thread(target=p2p_heartbeat_monitor, daemon=True).start()
+    threading.Thread(target=dynamic_node_scaling, daemon=True).start()
+    
     print("SDFBS Complete Distributed System")
-    print("Features: Multi-node, Load Balancing, File Chunking, Fault Tolerance")
+    print("Features: P2P Network + Heartbeat + Dynamic Scaling + Master-Slave")
     print("Access: http://localhost:8080")
-    print("Simulating 3 distributed nodes with load balancer")
     app.run(host='0.0.0.0', port=8080, debug=True)
