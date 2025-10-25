@@ -125,6 +125,8 @@ Go to: http://localhost:8080
 
 **Features:** 2x redundancy, fault tolerance, survives node failures, complete Phase 1 implementation
 
+
+
 ---
 
 ### **Step 6:** Test Upload (All Modes)
