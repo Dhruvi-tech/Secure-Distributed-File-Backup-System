@@ -1,4 +1,5 @@
 # <div align="center">🔐 Secure Distributed File Backup System</div>
+
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -7,15 +8,15 @@
 ![Build](https://img.shields.io/badge/Build-Passing-00D26A?style=for-the-badge&logo=github-actions&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=open-source-initiative&logoColor=white)
 
-### *Enterprise-grade distributed storage with military-level redundancy*
+### ✨ *Your data, distributed across the cloud. Always secure. Always available.* ✨
 
 **[🚀 Quick Start](#-quick-start) • [📖 Documentation](#-features-at-a-glance) • [💡 Demo](#-how-it-works) • [🤝 Contribute](#-contributing)**
+
+</div>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
 </p>
-
-</div>
 
 ## 🌟 Why SDFBS?
 
@@ -39,7 +40,9 @@
 </tr>
 </table>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## ✨ Features at a Glance
 
@@ -86,7 +89,9 @@ graph LR
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🚀 Quick Start
 
@@ -142,7 +147,9 @@ pip install flask
 # 4️⃣ Choose your mode and launch! 🚀
 ```
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🎮 Choose Your Mode
 
@@ -154,14 +161,12 @@ pip install flask
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Seedling.png" width="100">
   <p><strong>🌱 Simple Mode</strong></p>
   <p>🎯 <strong>Perfect for Development</strong></p>
-  <pre><code>python
-simple_distributed.py
-</code></pre>
+  <pre><code>python simple_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-1.0-green?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul>
+  <ul align="left">
     <li>🔹 Basic chunking</li>
     <li>🔹 Single-node simulation</li>
     <li>🔹 Web interface</li>
@@ -174,14 +179,12 @@ simple_distributed.py
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="100">
   <p><strong>🚀 Distributed Mode</strong></p>
   <p>⚡ <strong>Full P2P Network</strong></p>
-  <pre><code>python
-complete_distributed.py
-</code></pre>
+  <pre><code>python complete_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul>
+  <ul align="left">
     <li>🔹 Multi-node mesh</li>
     <li>🔹 Heartbeat tracking</li>
     <li>🔹 Dynamic scaling</li>
@@ -194,14 +197,12 @@ complete_distributed.py
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" width="100">
   <p><strong>💎 Production Mode</strong></p>
   <p>🏆 <strong>Enterprise Ready</strong></p>
-  <pre><code>python
-redundant_distributed.py
-</code></pre>
+  <pre><code>python redundant_distributed.py</code></pre>
   <p>
     <img src="https://img.shields.io/badge/Version-3.0-purple?style=for-the-badge&logo=python&logoColor=white">
   </p>
   <p><strong>✨ Features</strong></p>
-  <ul>
+  <ul align="left">
     <li>🔹 Cassandra DB</li>
     <li>🔹 2x redundancy</li>
     <li>🔹 Full fault tolerance</li>
@@ -214,8 +215,9 @@ redundant_distributed.py
 
 </div>
 
-
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🎨 How It Works
 
@@ -280,7 +282,9 @@ sequenceDiagram
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🌐 Access Your Dashboard
 
@@ -319,7 +323,9 @@ sequenceDiagram
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🛠️ Quick Commands
 
@@ -376,7 +382,9 @@ curl http://localhost:8080/status
 </tr>
 </table>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🔧 Troubleshooting
 
@@ -456,7 +464,9 @@ pip3 install flask
 
 </details>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 📊 System Architecture
 
@@ -517,7 +527,9 @@ graph TB
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🤝 Contributing
 
@@ -589,13 +601,13 @@ graph LR
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 📜 License
 
 <div align="center">
-
-<h1>⭐</h1>
 
 ### MIT License
 
@@ -607,7 +619,9 @@ graph LR
 
 </div>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
 
 ## 🌟 Show Your Support
 
@@ -618,12 +632,6 @@ graph LR
 [![GitHub stars](https://img.shields.io/github/stars/Dhruvi-tech/Secure-Distributed-File-Backup-System?style=for-the-badge&logo=github&color=yellow)](https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System)
 [![GitHub forks](https://img.shields.io/github/forks/Dhruvi-tech/Secure-Distributed-File-Backup-System?style=for-the-badge&logo=github&color=blue)](https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/Dhruvi-tech/Secure-Distributed-File-Backup-System?style=for-the-badge&logo=github&color=green)](https://github.com/Dhruvi-tech/Secure-Distributed-File-Backup-System)
-
-<br/>
-
-<h1>⭐</h1>
-
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ### 💬 Final Words
 
@@ -656,11 +664,11 @@ graph LR
 </tr>
 </table>
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<br/>
 
 Made with ❤️ by developers, for developers
 
-![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<br/>
 
 **[⬆ Back to Top](#-secure-distributed-file-backup-system)**
 
