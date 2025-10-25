@@ -661,7 +661,7 @@ graph LR
 
 Made with ❤️ by developers, for developers
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 **[⬆ Back to Top](#-secure-distributed-file-backup-system)**
 
