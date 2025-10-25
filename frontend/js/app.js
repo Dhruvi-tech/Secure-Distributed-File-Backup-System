@@ -1,1 +1,0 @@
-// JavaScript app entry

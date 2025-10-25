@@ -1,6 +1,0 @@
-﻿{
-  ""version"": ""2.0.0"",
-  ""tasks"": [
-    { ""label"": ""Restart Load Balancer"", ""type"": ""shell"", ""command"": ""docker restart loadbalancer"", ""group"": ""build"" }
-  ]
-}

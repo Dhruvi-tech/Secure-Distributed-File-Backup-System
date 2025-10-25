@@ -1,7 +1,0 @@
-﻿{
-  ""version"": ""2.0.0"",
-  ""tasks"": [
-    { ""label"": ""Build & Run Cloud"", ""type"": ""shell"", ""command"": ""docker-compose up -d --build"", ""group"": ""build"" },
-    { ""label"": ""Stop Cloud"", ""type"": ""shell"", ""command"": ""docker-compose down"", ""group"": ""build"" }
-  ]
-}

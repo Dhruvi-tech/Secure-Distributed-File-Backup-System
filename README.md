@@ -45,27 +45,75 @@ cd Secure-Distributed-File-Backup-System
 
 ---
 
-### 3️⃣ Build and Launch Services
+### 3️⃣ Step-by-Step Setup
 
-```bash
-docker-compose -f cloud/docker-compose.yml up -d --build
+#### Option 1: Simple Mode (Recommended)
+
+**Step 1:** Navigate to Phase 1 directory
+```cmd
+cd phase1-core-infrastructure
 ```
 
-✨ Docker will automatically pull, build, and run your entire SDFBS setup!
+**Step 2:** Install Python dependencies
+```cmd
+pip install flask
+```
+
+**Step 3:** Start the server
+```cmd
+python simple_server.py
+```
+
+**Step 4:** Open your browser and go to:
+```
+http://localhost:8080
+```
+
+
+
+#### Option 2: Standalone Mode
+
+**Step 1:** Navigate to Phase 1 directory
+```cmd
+cd phase1-core-infrastructure
+```
+
+**Step 2:** Install required packages
+```cmd
+pip install flask flask-cors
+```
+
+**Step 3:** Start API server (in first terminal)
+```cmd
+python standalone_server.py
+```
+
+**Step 4:** Start web server (in second terminal)
+```cmd
+python web_server.py
+```
+
+**Step 5:** Access web interface at:
+```
+http://localhost:3001
+```
 
 ---
 
-### 4️⃣ Verify Running Containers
+### 4️⃣ Verify System Status
 
-```bash
-docker ps
-```
+**Simple Mode:**
+1. Open http://localhost:8080 in your browser
+2. You should see "SDFBS Phase 1 - File Backup" page
+3. Try uploading a test file
+4. Verify the file appears in the files list
 
-Check that all containers are running successfully:
-- 🗄️ Cassandra Database Nodes  
-- 🔁 Node.js File Services  
-- ⚖️ Nginx Load Balancer  
-- 📈 Elasticsearch, Fluentd, Kibana Stack  
+
+
+**Standalone Mode:**
+1. Check API server at http://localhost:8080
+2. Check web interface at http://localhost:3001
+3. Upload a file through the web interface  
 
 ---
 
@@ -73,9 +121,9 @@ Check that all containers are running successfully:
 
 | 🌐 Service | 🔗 URL | 📝 Description |
 |-------------|---------|----------------|
-| **Load Balancer (HTTP)** | [http://localhost:8080](http://localhost:8080) | Access file backup nodes |
-| **Load Balancer (HTTPS)** | [https://localhost:8443](https://localhost:8443) | Secure access (self-signed SSL) |
-| **Kibana Dashboard** | [http://localhost:5601](http://localhost:5601) | Monitor logs, performance, and metrics |
+| **Simple Mode** | [http://localhost:8080](http://localhost:8080) | Complete file backup system |
+| **Standalone Web** | [http://localhost:3001](http://localhost:3001) | Web interface (standalone mode) |
+
 
 ---
 
@@ -83,11 +131,10 @@ Check that all containers are running successfully:
 
 | 🧩 Action | 💻 Command |
 |------------|-------------|
-| ▶️ **Start All Services** | `docker-compose -f cloud/docker-compose.yml up -d --build` |
-| ⏹️ **Stop All Services** | `docker-compose -f cloud/docker-compose.yml down` |
-| 🩺 **Show Running Containers** | `docker ps` |
-| 📜 **View Logs** | `docker logs <container-name>` |
-| 🔄 **Restart Load Balancer** | `docker restart loadbalancer` |
+| ▶️ **Start Simple Mode** | `cd phase1-core-infrastructure && run_simple.bat` |
+| ▶️ **Start Standalone Mode** | `cd phase1-core-infrastructure && run_standalone.bat` |
+| 🔍 **Check Python Version** | `python --version` |
+| 📦 **Install Dependencies** | `pip install flask flask-cors` |
 
 ---
 
@@ -95,10 +142,10 @@ Check that all containers are running successfully:
 
 | ⚠️ Issue | 🩹 Solution |
 |-----------|-------------|
-| **Port conflicts** | Modify ports in `cloud/docker-compose.yml`. |
-| **Docker startup issues** | Restart Docker Desktop and confirm WSL 2 backend is active. |
-| **Logs not visible** | Temporarily comment out the Fluentd container for debugging. |
-| **System errors** | Use `docker logs <container>` for detailed insights. |
+| **Port 8080 in use** | Close other applications using port 8080 or change port in code. |
+| **Python not found** | Install Python 3.7+ from python.org |
+| **Flask not installed** | Run `pip install flask flask-cors` |
+| **Can't access localhost** | Check if server is running and firewall allows connections. |
 
 ---
 
