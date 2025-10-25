@@ -1,0 +1,30 @@
+# Runtime files
+phase1-core-infrastructure/files/
+phase1-core-infrastructure/file_storage/
+phase1-core-infrastructure/metadata.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
