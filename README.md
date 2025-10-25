@@ -10,11 +10,15 @@
 
 ### *Enterprise-grade distributed storage with military-level redundancy*
 
-**[🚀 Quick Start](#-quick-start) • [📖 Features](#-features-at-a-glance) • [💡 How It Works](#-how-it-works) • [🤝 Contributing](#-contributing)**
-
-</div>
+**[🚀 Quick Start](#-quick-start) • [📖 Documentation](#-features-at-a-glance) • [💡 Demo](#-how-it-works) • [🤝 Contribute](#-contributing)**
 
 ---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
+
+</div>
 
 ## 🌟 Why SDFBS?
 
@@ -38,7 +42,7 @@
 </tr>
 </table>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## ✨ Features at a Glance
 
@@ -85,7 +89,7 @@ graph LR
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🚀 Quick Start
 
@@ -141,7 +145,7 @@ pip install flask
 # 4️⃣ Choose your mode and launch! 🚀
 ```
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🎮 Choose Your Mode
 
@@ -210,7 +214,7 @@ python redundant_distributed.py
 </tr>
 </table>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🎨 How It Works
 
@@ -275,7 +279,7 @@ sequenceDiagram
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🌐 Access Your Dashboard
 
@@ -314,7 +318,7 @@ sequenceDiagram
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🛠️ Quick Commands
 
@@ -371,7 +375,7 @@ curl http://localhost:8080/status
 </tr>
 </table>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🔧 Troubleshooting
 
@@ -451,7 +455,7 @@ pip3 install flask
 
 </details>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 📊 System Architecture
 
@@ -512,7 +516,7 @@ graph TB
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🤝 Contributing
 
@@ -584,7 +588,7 @@ graph LR
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 📜 License
 
@@ -602,7 +606,7 @@ graph LR
 
 </div>
 
----
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## 🌟 Show Your Support
 
@@ -654,6 +658,8 @@ graph LR
 ---
 
 Made with ❤️ by developers, for developers
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
 
 **[⬆ Back to Top](#-secure-distributed-file-backup-system)**
 
