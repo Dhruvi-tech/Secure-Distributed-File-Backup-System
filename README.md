@@ -472,9 +472,13 @@ phase1-core-infrastructure/
 ├── 📄 simple_server.py          # Single Flask server with built-in web interface
 ├── 📄 standalone_server.py      # API-only server for file operations
 ├── 📄 web_server.py             # Static web server for standalone mode
+├── 📄 simple_distributed.py     # Basic distributed file system implementation
+├── 📄 complete_distributed.py   # P2P network with heartbeat tracking
+├── 📄 redundant_distributed.py  # Production-ready with 2x redundancy
 ├── 🚀 run_simple.bat            # Starts simple mode (Flask + simple_server.py)
 ├── 🚀 run_standalone.bat        # Starts API and web servers separately
 ├── 📋 requirements.txt          # Python dependencies (Flask, Flask-CORS, Cassandra)
+├── 📖 README.md                 # Phase 1 documentation
 └── 📁 cloud/                    # Docker distributed system (7 files)
     ├── 🐳 distributed_node.py   # Storage node with Cassandra integration
     ├── 🐳 docker-compose.yml    # 3 Cassandra DBs + 3 nodes + load balancer
@@ -487,24 +491,21 @@ phase1-core-infrastructure/
 
 <div align="center">
 
-### 🎯 Three Operating Modes
+### 🎯 Six Operating Modes
 
 <table>
 <tr>
-<td align="center" width="33%">
-<h3>🌱 Simple Mode</h3>
-<p><code>run_simple.bat</code></p>
-<p>Single server, local storage</p>
+<td align="center" width="50%">
+<h3>🌱 Simple Modes</h3>
+<p><code>run_simple.bat</code> - Basic Flask server</p>
+<p><code>run_standalone.bat</code> - API + Web servers</p>
+<p><code>simple_distributed.py</code> - Basic distributed</p>
 </td>
-<td align="center" width="33%">
-<h3>🔧 Standalone Mode</h3>
-<p><code>run_standalone.bat</code></p>
-<p>API + Web servers, local storage</p>
-</td>
-<td align="center" width="33%">
-<h3>☁️ Cloud Mode</h3>
-<p><code>cloud/start_cloud.bat</code></p>
-<p>Full distributed system with Docker</p>
+<td align="center" width="50%">
+<h3>🚀 Advanced Modes</h3>
+<p><code>complete_distributed.py</code> - P2P network</p>
+<p><code>redundant_distributed.py</code> - Production ready</p>
+<p><code>cloud/start_cloud.bat</code> - Docker cluster</p>
 </td>
 </tr>
 </table>
