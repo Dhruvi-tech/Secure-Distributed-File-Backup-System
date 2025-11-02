@@ -342,7 +342,8 @@ pip install flask
 
 ```bash
 # Run simple mode
-python simple_distributed.py
+cd phase1-core-infrastructure
+run_simple.bat
 ```
 ![Run](https://img.shields.io/badge/Run-Simple_Mode-green?style=flat-square&logo=python)
 
@@ -356,8 +357,9 @@ curl http://localhost:8080/health
 ![Health](https://img.shields.io/badge/Check-Health-00D26A?style=flat-square&logo=statuspage)
 
 ```bash
-# Run with redundancy
-python redundant_distributed.py
+# Run distributed mode
+cd phase1-core-infrastructure\cloud
+start_cloud.bat
 ```
 ![Redundancy](https://img.shields.io/badge/Run-Production_Mode-purple?style=flat-square&logo=python)
 
