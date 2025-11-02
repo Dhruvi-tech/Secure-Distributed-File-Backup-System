@@ -459,6 +459,62 @@ pip3 install flask
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
 </p>
 
+## 📁 Project Structure
+
+<div align="center">
+
+### 📂 Phase 1 Core Infrastructure Files
+
+</div>
+
+```
+phase1-core-infrastructure/
+├── 📄 simple_server.py          # Single Flask server with built-in web interface
+├── 📄 standalone_server.py      # API-only server for file operations
+├── 📄 web_server.py             # Static web server for standalone mode
+├── 🚀 run_simple.bat            # Starts simple mode (Flask + simple_server.py)
+├── 🚀 run_standalone.bat        # Starts API and web servers separately
+├── 📋 requirements.txt          # Python dependencies (Flask, Flask-CORS, Cassandra)
+└── 📁 cloud/                    # Docker distributed system (7 files)
+    ├── 🐳 distributed_node.py   # Storage node with Cassandra integration
+    ├── 🐳 docker-compose.yml    # 3 Cassandra DBs + 3 nodes + load balancer
+    ├── 🐳 Dockerfile            # Container image for storage nodes
+    ├── ⚖️ nginx.conf            # Load balancer configuration
+    ├── 🌐 web_dashboard.html    # Distributed system web interface
+    ├── 🚀 start_cloud.bat       # Docker deployment script
+    └── 📋 requirements.txt      # Docker-specific dependencies
+```
+
+<div align="center">
+
+### 🎯 Three Operating Modes
+
+<table>
+<tr>
+<td align="center" width="33%">
+<h3>🌱 Simple Mode</h3>
+<p><code>run_simple.bat</code></p>
+<p>Single server, local storage</p>
+</td>
+<td align="center" width="33%">
+<h3>🔧 Standalone Mode</h3>
+<p><code>run_standalone.bat</code></p>
+<p>API + Web servers, local storage</p>
+</td>
+<td align="center" width="33%">
+<h3>☁️ Cloud Mode</h3>
+<p><code>cloud/start_cloud.bat</code></p>
+<p>Full distributed system with Docker</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+</p>
+
 ## 📊 System Architecture
 
 <div align="center">
