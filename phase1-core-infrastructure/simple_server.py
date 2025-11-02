@@ -34,7 +34,7 @@ HTML_TEMPLATE = '''
     </style>
 </head>
 <body>
-    <h1>🔐 SDFBS Phase 1 - File Backup</h1>
+    <h1>SDFBS Phase 1 - File Backup</h1>
     
     <div class="box">
         <h3>Upload File</h3>
@@ -103,7 +103,11 @@ def download_file(file_id):
 def api_files():
     return jsonify(load_metadata())
 
+@app.route('/health')
+def health():
+    return jsonify({"status": "healthy", "message": "SDFBS Simple Server is running"})
+
 if __name__ == '__main__':
-    print("🚀 SDFBS Phase 1 - Simple Server")
-    print("🌐 Open: http://localhost:8080")
+    print("SDFBS Phase 1 - Simple Server")
+    print("Open: http://localhost:8080")
     app.run(host='0.0.0.0', port=8080, debug=True)
