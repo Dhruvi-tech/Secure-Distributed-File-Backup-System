@@ -42,45 +42,47 @@ This phase establishes the foundational distributed system architecture with bas
 - [x] All services run in Docker containers
 - [x] Basic fault tolerance (single node failure)
 
-## 🚀 Quick Start
+## 🚀 Quick Start (3 Modes)
 
-### Option 1: Cloud Architecture (Recommended)
+### Mode 1: Simple (Single Server)
 ```cmd
-cd phase1-core-infrastructure\cloud
-start_cloud.bat
-```
-Access: http://localhost:8080 (Load Balanced)
-Dashboard: Open `web_dashboard.html` in browser
-
-### Option 2: Simple Mode (Development)
-```cmd
-cd phase1-core-infrastructure
 run_simple.bat
 ```
-Access: http://localhost:8080
+- Access: http://localhost:8080
+- Features: Basic upload/download, local storage
 
-### Option 3: Standalone Mode
+### Mode 2: Standalone (API + Web)
 ```cmd
-cd phase1-core-infrastructure
 run_standalone.bat
 ```
-Access: http://localhost:3001
+- API: http://localhost:8080
+- Web: http://localhost:3001
+- Features: Separate frontend/backend
 
-## 📁 Phase 1 Components
+### Mode 3: Cloud (Distributed)
+```cmd
+cd cloud
+start_cloud.bat
+```
+- Access: http://localhost:8080 (Load Balanced)
+- Features: 3 nodes, Cassandra, chunking, redundancy
 
-### Cloud Architecture (Primary)
-- `cloud/distributed_node.py` - Distributed storage node with Cassandra
-- `cloud/docker-compose.yml` - Multi-node cluster orchestration
-- `cloud/nginx.conf` - Load balancer with security features
-- `cloud/web_dashboard.html` - Distributed system dashboard
-- `cloud/start_cloud.bat` - Cloud deployment script
+## 📁 Phase 1 Files (6 Total)
 
-### Development Options
-- `simple_server.py` - Single-file server for testing
-- `standalone_server.py` - Standalone API server
-- `web_server.py` - Web interface server
-- `run_simple.bat` - Simple mode launcher
-- `run_standalone.bat` - Standalone mode launcher
+### Core Server Files
+- `simple_server.py` - Single Flask server with built-in web interface
+- `standalone_server.py` - API-only server for file operations
+- `web_server.py` - Static web server for standalone mode
+
+### Launcher Scripts
+- `run_simple.bat` - Starts simple mode (installs Flask + runs simple_server.py)
+- `run_standalone.bat` - Starts both API and web servers in separate windows
+
+### Configuration
+- `requirements.txt` - Python dependencies (Flask, Flask-CORS, Cassandra driver)
+
+### Cloud Directory (Docker Architecture)
+- `cloud/` - Contains distributed system files (7 files for Docker mode)
 
 ## Next Phase
 Phase 2 will add security features including encryption, authentication, and anomaly detection.
