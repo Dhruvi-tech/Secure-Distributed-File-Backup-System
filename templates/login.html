@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDFBS - Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>🔐 Secure Distributed File Backup System</h1>
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="showLogin()">Login</button>
+                <button class="auth-tab" onclick="showRegister()">Register</button>
+            </div>
+
+            <div id="login-form" class="auth-form">
+                <h2>Login to Your Account</h2>
+                <form onsubmit="return loginUser(event)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                </form>
+                <div id="login-message" class="auth-message"></div>
+            </div>
+
+            <div id="register-form" class="auth-form hidden">
+                <h2>Create New Account</h2>
+                <form onsubmit="return registerUser(event)">
+                    <div class="form-group">
+                        <label for="reg-username">Username</label>
+                        <input type="text" id="reg-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm">Confirm Password</label>
+                        <input type="password" id="reg-confirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="is-admin"> Admin User
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-btn">Register</button>
+                </form>
+                <div id="register-message" class="auth-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('register-form').classList.add('hidden');
+            document.querySelectorAll('.auth-tab')[0].classList.add('active');
+            document.querySelectorAll('.auth-tab')[1].classList.remove('active');
+        }
+
+        function showRegister() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+            document.querySelectorAll('.auth-tab')[1].classList.add('active');
+            document.querySelectorAll('.auth-tab')[0].classList.remove('active');
+        }
+
+        async function loginUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/secure/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = '/secure/dashboard';
+                } else {
+                    document.getElementById('login-message').textContent = data.error || 'Login failed';
+                    document.getElementById('login-message').style.color = 'red';
+                }
+            } catch (error) {
+                document.getElementById('login-message').textContent = 'Network error';
+                document.getElementById('login-message').style.color = 'red';
+            }
+        }
+
+        async function registerUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('reg-username').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm').value;
+            const isAdmin = document.getElementById('is-admin').checked;
+
+            if (password !== confirmPassword) {
+                document.getElementById('register-message').textContent = 'Passwords do not match';
+                document.getElementById('register-message').style.color = 'red';
+                return;
+            }
+
+            try {
+                const response = await fetch('/secure/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password, is_admin: isAdmin })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('register-message').textContent = 'Registration successful! Please login.';
+                    document.getElementById('register-message').style.color = 'green';
+                    showLogin();
+                } else {
+                    document.getElementById('register-message').textContent = data.error || 'Registration failed';
+                    document.getElementById('register-message').style.color = 'red';
+                }
+            } catch (error) {
+                document.getElementById('register-message').textContent = 'Network error';
+                document.getElementById('register-message').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

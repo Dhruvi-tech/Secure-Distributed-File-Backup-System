@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDFBS - Unified Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <h1 class="nav-title">🔐 SDFBS</h1>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-mode="simple">Simple</button>
+                <button class="nav-tab" data-mode="distributed">Distributed</button>
+                <button class="nav-tab" data-mode="production">Production</button>
+                <button class="nav-tab" data-mode="secure">Secure</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mode Content Containers -->
+        <div id="simple-mode" class="mode-container active">
+            <!-- Simple Mode Content -->
+            <section class="stats-section">
+                <h2>📊 System Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="simple-totalFiles">0</div>
+                        <div class="stat-label">Total Files</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="simple-activeNodes">0</div>
+                        <div class="stat-label">Active Nodes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="simple-totalStorage">0 MB</div>
+                        <div class="stat-label">Storage Used</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid-container">
+                <section class="upload-section">
+                    <h3>📤 Upload File</h3>
+                    <input type="file" id="simple-fileInput" multiple>
+                    <button class="upload-btn" onclick="uploadFile('simple')">Upload</button>
+                    <div class="upload-progress" id="simple-uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="simple-progressFill"></div>
+                        </div>
+                        <div id="simple-progressText">Uploading...</div>
+                    </div>
+                    <div id="simple-uploadStatus"></div>
+                </section>
+
+                <section class="nodes-section">
+                    <h3>🖥️ Storage Nodes</h3>
+                    <button class="refresh-btn" onclick="loadNodes('simple')">Refresh Nodes</button>
+                    <div id="simple-nodesList"></div>
+                </section>
+            </div>
+
+            <section class="files-section">
+                <h3>📁 Files</h3>
+                <button class="refresh-btn" onclick="loadFiles('simple')">Refresh Files</button>
+                <div id="simple-filesList"></div>
+            </section>
+        </div>
+
+        <div id="distributed-mode" class="mode-container">
+            <!-- Distributed Mode Content (similar to simple but with different API) -->
+            <section class="stats-section">
+                <h2>📊 Distributed System Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="distributed-totalFiles">0</div>
+                        <div class="stat-label">Total Files</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="distributed-activeNodes">0</div>
+                        <div class="stat-label">Active Nodes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="distributed-totalStorage">0 MB</div>
+                        <div class="stat-label">Storage Used</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid-container">
+                <section class="upload-section">
+                    <h3>📤 Upload to Distributed Storage</h3>
+                    <input type="file" id="distributed-fileInput" multiple>
+                    <button class="upload-btn" onclick="uploadFile('distributed')">Upload</button>
+                    <div class="upload-progress" id="distributed-uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="distributed-progressFill"></div>
+                        </div>
+                        <div id="distributed-progressText">Uploading...</div>
+                    </div>
+                    <div id="distributed-uploadStatus"></div>
+                </section>
+
+                <section class="nodes-section">
+                    <h3>🖥️ Distributed Nodes</h3>
+                    <button class="refresh-btn" onclick="loadNodes('distributed')">Refresh Nodes</button>
+                    <div id="distributed-nodesList"></div>
+                </section>
+            </div>
+
+            <section class="files-section">
+                <h3>📁 Distributed Files</h3>
+                <button class="refresh-btn" onclick="loadFiles('distributed')">Refresh Files</button>
+                <div id="distributed-filesList"></div>
+            </section>
+        </div>
+
+        <div id="production-mode" class="mode-container">
+            <!-- Production Mode Content -->
+            <section class="stats-section">
+                <h2>📊 Production System Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="production-masterNode">0</div>
+                        <div class="stat-label">Master Node</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="production-slaveNodes">0</div>
+                        <div class="stat-label">Slave Nodes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="production-replicationStatus">Healthy</div>
+                        <div class="stat-label">Replication Status</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cluster-section">
+                <h3>🗄️ Cassandra Cluster</h3>
+                <div class="cluster-grid" id="production-clusterGrid">
+                    <!-- Cluster nodes will be populated by JS -->
+                </div>
+            </section>
+
+            <div class="grid-container">
+                <section class="upload-section">
+                    <h3>🚀 Production Upload</h3>
+                    <input type="file" id="production-fileInput" multiple>
+                    <button class="upload-btn" onclick="uploadFile('production')">Upload</button>
+                    <div class="upload-progress" id="production-uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="production-progressFill"></div>
+                        </div>
+                        <div id="production-progressText">Uploading...</div>
+                    </div>
+                    <div id="production-uploadStatus"></div>
+                </section>
+
+                <section class="logs-section">
+                    <h3>📊 Replication Logs</h3>
+                    <div id="production-logs" class="logs-container"></div>
+                </section>
+            </div>
+
+            <section class="files-section">
+                <h3>📁 Production Files</h3>
+                <button class="refresh-btn" onclick="loadFiles('production')">Refresh Files</button>
+                <div id="production-filesList"></div>
+            </section>
+        </div>
+
+        <div id="secure-mode" class="mode-container">
+            <!-- Secure Mode Content -->
+            <section class="auth-section" id="auth-panel">
+                <div class="auth-forms">
+                    <div class="auth-form active" id="login-form">
+                        <h3>🔑 Login</h3>
+                        <input type="text" id="secure-username" placeholder="Username">
+                        <input type="password" id="secure-password" placeholder="Password">
+                        <button class="auth-btn" onclick="login()">Login</button>
+                    </div>
+                    <div class="auth-form" id="register-form">
+                        <h3>📝 Register</h3>
+                        <input type="text" id="register-username" placeholder="Username">
+                        <input type="password" id="register-password" placeholder="Password">
+                        <input type="password" id="register-confirm" placeholder="Confirm Password">
+                        <label><input type="checkbox" id="is-admin"> Admin User</label>
+                        <button class="auth-btn" onclick="register()">Register</button>
+                    </div>
+                </div>
+                <button class="switch-auth-btn" onclick="switchAuthForm()">Switch to Register</button>
+            </section>
+
+            <section class="secure-content" id="secure-content" style="display: none;">
+                <section class="stats-section">
+                    <h2>🛡️ Secure System Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="secure-encryptionStatus">Active</div>
+                            <div class="stat-label">Encryption</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="secure-usersOnline">0</div>
+                            <div class="stat-label">Users Online</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="secure-filesStored">0</div>
+                            <div class="stat-label">Files Stored</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="upload-section">
+                    <h3>🚀 Secure Upload Zone</h3>
+                    <div class="upload-zone" id="secure-uploadZone">
+                        <div class="upload-zone-content">
+                            <div class="upload-icon">📁</div>
+                            <p>Drag & drop files here or click to browse</p>
+                            <input type="file" id="secure-fileInput" multiple style="display: none;">
+                            <button class="upload-btn" onclick="document.getElementById('secure-fileInput').click()">Browse Files</button>
+                        </div>
+                    </div>
+                    <div class="upload-progress" id="secure-uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="secure-progressFill"></div>
+                        </div>
+                        <div id="secure-progressText">Uploading...</div>
+                    </div>
+                    <div id="secure-uploadStatus"></div>
+                </section>
+
+                <section class="files-section">
+                    <h3>🔐 Encrypted Files</h3>
+                    <button class="refresh-btn" onclick="loadFiles('secure')">Refresh Files</button>
+                    <div id="secure-filesList"></div>
+                </section>
+
+                <section class="admin-section" id="admin-panel" style="display: none;">
+                    <h3>👑 Admin Panel</h3>
+                    <div class="admin-content">
+                        <div class="admin-tabs">
+                            <button class="admin-tab active" data-tab="logs">Activity Logs</button>
+                            <button class="admin-tab" data-tab="users">User Management</button>
+                        </div>
+                        <div class="admin-tab-content" id="admin-logs"></div>
+                        <div class="admin-tab-content" id="admin-users" style="display: none;"></div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
